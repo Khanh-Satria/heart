@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@200;400;600&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+
+body{
+    background-color: pink;
+}
+.heart {
+    /*#ff99ac The only thing needed to change the size, are these numbers: */
+    width:700px;
+    height:700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .heart .inner {
+    /* Here is the styling and positioning for your text */
+    padding-top: 20%;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #f4f2f3
+  }
+  
+  /* The rest is default, and doesn't need to be modified, unless you want to change background color or other 'heart' properties. */
+  .heart .inner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .heart {
+    position:relative;
+    text-align: center;
+    box-sizing: border-box;
+    animation: heart 1s ease infinite;
+    filter: drop-shadow(4px 4px 10px rgba(252, 250, 250, 0.5));
+  }
+  
+  .heart:after,
+  .heart .inner:before, 
+  .heart .inner:after {
+    z-index: -1;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #ef233c;
+  }
+  
+  .heart:after {
+    width: 60%;
+    height: 60%;
+    left: 20%;
+    top: 25%;
+    -webkit-transform:rotate(-40deg);
+    -moz-transform:rotate(-40deg);
+    -ms-transform:rotate(-40deg);
+    -o-transform:rotate(-40deg);
+    transform:rotate(-45deg);
+    border-radius: 0 30% 0 5%;
+  }
+  
+  .heart .inner:before, 
+  .heart .inner:after {
+    width:58%;
+    height:58%;
+    -moz-border-radius:50%;
+    border-radius: 50%;
+    top: 5.5%;
+  }
+  .heart .inner:before {
+      left: -1%;
+  }
+  .heart .inner:after {
+    right: -1%;
+  }
+
+  @keyframes heart {
+	10% {
+		transform: translate(1%,1%) scale(.8,.8)
+	}
+	10% {
+		transform: translate(1%,1%) scale(1,1)
+	}
+}
+
+
+.icon {
+    position: fixed;
+    font-size: 1.5rem;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear forwards;
+  }
+  
+  @keyframes fall {
+    from {
+       transform: translateY(0vh) translateX(-10vw); 
+    }
+    to {
+       transform: translateY(105vh) translateX(10vw); 
+    }
+  } 
